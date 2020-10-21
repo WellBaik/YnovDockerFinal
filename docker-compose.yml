@@ -14,3 +14,15 @@ redis:
     - ./data:/data
 mysql:
     image: mysql
+    restart: always
+    environment:
+        MYSQL_DATABASE: 'db'
+        MYSQL_USER: 'user'
+        MYSQL_PASSWORD: 'pass'
+        MYSQL_ROOT_PASSWORD: 'pass'
+    ports: 
+        - '3306:3306'
+    expose:
+        - '3306'
+    
+        
