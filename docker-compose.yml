@@ -1,18 +1,18 @@
 services:
   front:
-    build: .
+    build: ./front/
     ports:
       - "8080:8080"
     volumes:
-      - ./src:/src
-      - /src/node_modules
+      - ./front:/src
+      - /front/node_modules
     links:
       - redis
   redis:
     image: redis
     command: redis-server --appendonly yes
     volumes:
-      - ./data:/data
+      - ./bdd:/data
   mysql:
     image: mysql
     restart: always
@@ -26,6 +26,10 @@ services:
     expose:
       - "3306"
     volumes:
-      - ./src:/docker-entrypoint-initdb.d
-      - ./src:/var/lib/mysql
+      - ./bdd:/docker-entrypoint-initdb.d
+      - ./bdd:/var/lib/mysql
+  php:
+    build: ./php/
+    ports:
+      - "80:80"
 
