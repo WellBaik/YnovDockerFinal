@@ -21,8 +21,12 @@ Pour ajouter un nom dans la base de données :
 ### MySQL
 Partie mysql accessible à l'adresse suivante :
 > host : localhost:3306
+
 > username : user
+
 > password : pass
+
 > dbname : db
+
 > tablename : name
 
