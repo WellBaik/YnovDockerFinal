@@ -17,7 +17,7 @@ if(strlen($name)>0){
     $port = "3306";
     
     try {
-        $dbh = new PDO('mysql:host=localhost;port=$port;dbname=db', $user, $pass);
+        $dbh = new PDO('mysql:host=mysql;port=$port;dbname=db', $username, $password);
         foreach($dbh->query('SELECT * from name') as $row) {
             print_r($row);
         }
